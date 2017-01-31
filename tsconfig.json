@@ -2,10 +2,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "sourceMap": true,
     "outDir": "./build",
-    "rootDir": "./lib"
+    "rootDir": "./lib",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ]
   },
   "compileOnSave": false,
   "filesGlob": [
@@ -16,11 +21,5 @@
   ],
   "atom": {
     "rewriteTsconfig": true
-  },
-  "files": [
-    "./lib/index.ts",
-    "./lib/routes.ts",
-    "./lib/test/index.spec.ts",
-    "./lib/test/routes.spec.ts"
-  ]
+  }
 }

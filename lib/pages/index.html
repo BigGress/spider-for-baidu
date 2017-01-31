@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/material/vue-material.css">
+    <style>
+        .md-input-container.md-theme-default.md-input-placeholder {
+            padding-top: 0;
+        }
+        .md-input-container.md-theme-default.md-input-placeholder input {
+            height: 48px;
+            line-height: 48px;
+        }
+
+        .md-from {
+            width: 50%;
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <md-toolbar class="md-primary">
+            <h2 class="md-title" style="flex: 1">BT 搜索</h2>
+        </md-toolbar>
+        <md-layout md-align="center" md-gutter>
+            <from action="/send" method="POST" md-flex="60" class="md-from">
+                <md-whiteframe md-elevation="2" class="clear">
+                    <md-input-container class="">
+                        <md-input v-model="key" placeholder="搜索的关键词"></md-input>
+                    </md-input-container>
+                </md-whiteframe>
+                <md-input-container>
+                    <md-input placeholder="email" type="email" v-model="email"></md-input>
+                </md-input-container>
+                <md-layout md-align="center">
+                    <md-button type="submit" class="md-raised md-primary" v-on:click.stop="submit">
+                        <span>搜索</span>
+                    </md-button>
+                    <p>{{tooltip}}</p>
+                </md-layout>
+                <!--<md-button v-on:click="testA"
+                >test</md-button>-->
+            </from>
+        </md-layout>
+    </div>
+    <script src="//cdn.bootcss.com/socket.io/1.7.2/socket.io.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.1.10/vue.min.js"></script>
+    <script src="/static/material/vue-material.js"></script>
+    <script src="/static/index.js"></script>
+</body>
+</html>
